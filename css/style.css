@@ -32,14 +32,16 @@ body{
 .app{
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 .site{
     width: 290px;
-    min-height: 100vh;
-    position: sticky;
-    -webkit-position:sticky;
+    height: 100vh;
+    position:sticky;
     top: 0;
     left: 0;
+    bottom: 0;
+    background-color: #fff;
 }
 .logo{
     width: 100%;
@@ -171,4 +173,98 @@ body{
 }
 .intro{
     flex: 1;
+}
+.swiper-pagination-bullet{
+    background-color: #fff;
+    width: 12px;
+    height: 12px;
+    transform: translateY(-13px);
+}
+.intro-up{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    
+}
+
+.intro-up.active .img-up{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+}
+.img-up{
+    width: 550px;
+    margin: 30px 15px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+    transform: translateY(150px);
+}
+.intro-dow{
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1,1fr);
+    grid-template-areas: 
+    "q q w e"
+    "q q t r";
+    gap: 30px;
+    overflow: hidden;
+}
+.img-dow1{
+    grid-area: q;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+    transform: scale(1.2);
+    width: 100%;
+}
+.intro-dow.active .img-dow1{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+.img-dow2{
+    grid-area: w;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+    transform: translateY(100px);
+}
+.img-dow3{
+    grid-area: e;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+    transform: translateY(100px);
+}
+.intro-dow.active .img-dow2,
+.intro-dow.active .img-dow3{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+}
+
+
+.img-dow4{
+    grid-area: r;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+    transform: translateY(100px);
+}
+.img-dow5{
+    grid-area: t;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+    transform: translateY(100px);
+}
+.intro-dow.toggle .img-dow4,
+.intro-dow.toggle .img-dow5{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
 }
