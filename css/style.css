@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+:root{
+    --primary-color:rgb(55, 96, 184);
+}
 html {
 box-sizing: border-box;
 }
@@ -173,6 +176,7 @@ body{
 }
 .intro{
     flex: 1;
+    overflow: hidden;
 }
 .swiper-pagination-bullet{
     background-color: #fff;
@@ -267,4 +271,114 @@ body{
     opacity: 1;
     visibility: visible;
     transform: translateY(0px);
+}
+.intro-title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.intro-title__1{
+    margin: 30px 0;
+    position: relative;
+    display: inline-block;
+}
+.intro-title__1:hover{
+    color: var(--primary-color);
+    cursor: pointer;
+}
+.intro-long{
+    width: 10px;
+    height: 10px;
+    border-radius:50%;
+    border:2px solid #2D2D2D;
+    display: inline-block;
+    position:absolute;
+    bottom: -10px;
+    left: 50%;
+}
+.intro-long::before{
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 250px;
+    background-color: #111;
+    left: 25px;
+    bottom: 2px;
+}
+.swiper-grid-column>.swiper-wrapper {
+    flex-direction: row;
+}
+.intro-long::after{
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 250px;
+    background-color: #111;
+    left: -270px;
+    bottom: 2px;
+}
+.intro-product{
+    margin: 0 50px;
+}
+.product-item{
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    transition: all 0.5s linear;
+}
+.product-item:hover .product-cl{
+    animation: pro 0.3s linear 0.3s forwards;
+}
+@keyframes pro{
+    0%{
+        transform: translateY(60px);
+    }
+    100%{
+        transform: translateY(-30px);
+    }
+}
+.product-img{
+    overflow: hidden;
+}
+.product-cl{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    position:absolute;
+    gap: 0 10px;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: translateY(60px);
+}
+.product-img__item{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    cursor: pointer;
+    padding:10px;
+}
+.product-img__item:hover{
+    border: 1px solid #FF0000;
+}
+.price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 10px 0;
+    background-color: #fff;
+    gap: 0 8px;
+}
+.price-1{
+    font-weight: 600;
+}
+.price-2{
+    text-decoration:line-through;
+    opacity: 0.6;
 }
