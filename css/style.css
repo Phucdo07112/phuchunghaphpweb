@@ -541,8 +541,6 @@ body{
     color: #fff;
     font-size: 12px;
 }
-.purchase-item{
-}
 .purchase-home{
     display: flex;
     align-items: center;
@@ -635,9 +633,6 @@ body{
     display: flex;
     padding: 30px 0;
     justify-content:space-between
-}
-.festival-contact{
-
 }
 .festival-title{
     color: #fff;
