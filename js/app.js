@@ -2,6 +2,14 @@ window.addEventListener('scroll', function() {
     const imgUp = document.querySelector('.intro-up');
     imgUp.classList.toggle('active', window.scrollY > 0);
 })
+const mainSc = document.querySelector('.main-sc');
+window.addEventListener('scroll', function() {
+    mainSc.classList.toggle('active', window.scrollY > 120);
+})
+mainSc.onclick = function() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
 window.addEventListener('scroll', function() {
     const imgDow = document.querySelector('.intro-dow');
     imgDow.classList.toggle('active', window.scrollY > 800);
@@ -9,6 +17,14 @@ window.addEventListener('scroll', function() {
 window.addEventListener('scroll', function() {
     const imgDow = document.querySelector('.intro-dow');
     imgDow.classList.toggle('toggle', window.scrollY > 1000);
+})
+window.addEventListener('scroll', function() {
+    const News = document.querySelector('.news');
+    News.classList.toggle('toggle', window.scrollY > 2200);
+})
+window.addEventListener('scroll', function() {
+    const Address = document.querySelector('.address');
+    Address.classList.toggle('toggle', window.scrollY > 3550);
 })
 // product
   const $ = document.querySelector.bind(document);
