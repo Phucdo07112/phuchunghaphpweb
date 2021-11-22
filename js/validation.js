@@ -168,6 +168,27 @@ Validator.minLength = function(selector, min,message) {
     };
 }
 
+Validator.isNumber = function(selector, min,message) {
+    return {
+        selector,
+        // kiểm tra người dùng đã nhập hay chưa
+        test: function(value) {
+            var regex = /^[0-9]+$/;
+            return regex.test(value) ? undefined : message || `Vui lòng nhập kí tự số`
+        }
+    };
+}
+
+Validator.minNumber = function(selector, min,message) {
+    return {
+        selector,
+        // kiểm tra người dùng đã nhập hay chưa
+        test: function(value) {
+            return value.length >= min ? undefined : message || `Vui lòng nhập tối thiểu ${min}`
+        }
+    };
+}
+
 Validator.isConfirmed = function(selector, getConfirmValue, message) {
     return {
         selector: selector,

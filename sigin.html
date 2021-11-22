@@ -20,7 +20,7 @@
             </div>
             <ul class="site-icon">
                 <li class="site-icon__item">
-                    <a href="#" class="icon-home nav-hv"><i class='bx bx-user-circle'></i></a>
+                    <a href="login.html" class="icon-home nav-hv"><i class='bx bx-user-circle'></i></a>
                 </li>
                 <li class="site-icon__item">
                     <a href="#" class="icon-home nav-hv"><i class='bx bx-search' ></i></a>
@@ -96,21 +96,24 @@
             <div class="menu-form">
                 <form action="" method="POST" class="form" id="form-1">
                     <div class="form-group">
-                        <input id="email" name="email" type="text" placeholder="Email hoặc số điện thoại" class="form-control">
+                        <input id="fullname" name="fullname" type="text" placeholder="Họ và tên" class="form-control">
+                        <span class="form-message form-messag2"></span>
+                    </div>
+                    <div class="form-group">
+                        <input id="email" name="email" type="text" placeholder="Email" class="form-control">
                         <span class="form-message"></span>
                     </div>
                     <div class="form-group">
                         <input id="password" name="password" type="password" placeholder="Mật khẩu" class="form-control">
                         <span class="form-message form-message1"></span>
                     </div>
-                    <button class="form-submit">Đăng nhập</button>
+                    <div class="form-group">
+                        <input id="number" name="number" type="text" placeholder="Điên thoại" class="form-control">
+                        <span class="form-message form-message3"></span>
+                    </div>
+                    <button class="form-submit">Đăng ký</button>
                 </form>
-                <div class="inter"></div>
-                <div class="inter-content">
-                    <div class="back"><a href="index.html">Về trang chủ</a></div>
-                    <div class="back"><a href="sigin.html">Đăng ký</a></div>
-                    <div class="back"><a href="index.html">Quên mật khẩu</a></div>
-                </div>
+                
             </div>
             <!-- Login end -->
             <footer class="footer">
@@ -223,8 +226,14 @@
             formGroupSelector: '.form-group',
             errorSelector: '.form-message',
             rules: [
-                Validator.isRequired('#email',"* Trường này bắc buộc"),
+                Validator.isRequired('#fullname',"* Trường này bắt buộc"),
+                Validator.isRequired('#number',"* Bạn chưa nhập SDT"),
+                Validator.isRequired('#email',"* Bạn chưa nhập Email"),
+                Validator.isEmail('#email',"* Vui lòng nhập chính xác email"),
                 Validator.isRequired('#password',"* Trường này bắt buộc"),
+                Validator.minLength('#password', 6, "Vui lòng nhập tối thiểu 6 số"),
+                Validator.isNumber('#number',10),
+                Validator.minNumber('#number',10,"Vui lòng nhập đầy đũ số")
             ],
             onSubmit: function(data) {
                 // Call API

@@ -771,8 +771,9 @@ body{
     align-items: center;
     flex-direction: column;
 }
+#form-2,
 #form-1{
-    height: 250px;
+    height: 300px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -797,6 +798,9 @@ body{
     font-size:16px;
     color:#7575759d;
 }
+
+.form-messag3,
+.form-messag2,
 .form-message1,
 .form-message{
     position: absolute;
@@ -808,13 +812,15 @@ body{
     padding:5px 10px;
     border-radius: 10px;
     box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.3);
-    top: 0px;
+    top: 30px;
     right: 250px;
     opacity: 0;
     visibility: hidden;
     transition: all 0.2s ease;
 }
+.form-message3::before,
 .form-message1::before,
+.form-message2::before,
 .form-message::before{
     content: "";
     position: absolute;
@@ -825,7 +831,13 @@ body{
     bottom:-20px;
 }
 span.form-message.form-message1{
-    top: 70px;
+    top: 90px;
+}
+span.form-message.form-messag2{
+    top: -30px;
+}
+span.form-message.form-message3{
+    top: 150px;
 }
 .form-group.invalid .form-control {
   border-color: #f33a58;
