@@ -92,7 +92,27 @@
                     </div>
                 </div>
             </div>
-            
+            <!-- Login start -->
+            <div class="menu-form">
+                <form action="" method="POST" class="form" id="form-1">
+                    <div class="form-group">
+                        <input id="email" name="email" type="text" placeholder="Email hoặc số điện thoại" class="form-control">
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <input id="password" name="password" type="password" placeholder="Mật khẩu" class="form-control">
+                        <span class="form-message form-message1"></span>
+                    </div>
+                    <button class="form-submit">Đăng nhập</button>
+                </form>
+                <div class="inter"></div>
+                <div class="inter-content">
+                    <div class="back"><a href="index.html">Về trang chủ</a></div>
+                    <div class="back"><a href="index.html">Đăng ký</a></div>
+                    <div class="back"><a href="index.html">Quên mật khẩu</a></div>
+                </div>
+            </div>
+            <!-- Login end -->
             <footer class="footer">
                 <div class="footer-contact">
                     <div class="purchase">
@@ -194,5 +214,24 @@
     </div>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/validation.js"></script>
+    <script>
+
+        // Mong muốn của chúng ta
+        Validator({
+            form: '#from-1',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isEmail('#email'),
+                Validator.minLength('#password', 6),
+            ],
+            onSubmit: function(data) {
+                // Call API
+                console.log(data);
+            }
+        });
+        
+    </script>
 </body>
 </html>
